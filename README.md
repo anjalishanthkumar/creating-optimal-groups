@@ -10,4 +10,4 @@ Description:
    output:
   *All diamond shaped,red colored cordinates are central points/groups
   *All circle shaped,magenta colored cordinates are cordinates/houses
-  *All green lines connecting the circles and diamond, denote a single group
+  *All green lines connecting from circles to diamonds, denote a single group
