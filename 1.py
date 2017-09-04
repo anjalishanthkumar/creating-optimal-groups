@@ -157,11 +157,12 @@ def final_cp(new_cp,g,count_re):
 	#print count_re
 	if(count_re==100):
 		print " we get a:( RuntimeError: maximum recursion depth exceeded)"
-		print "pervious central points and groups are:"
+		print "pervious central points and are groups are:"
 		for i in range(len(cp)):
 			print "central points are:",cp[i]
 			print "group",i+1,":"
 			print g[i]
+			print " "
 		k=0
 		x=[]
 		y=[]
@@ -172,10 +173,12 @@ def final_cp(new_cp,g,count_re):
 				pl.plot(cp[i][k],cp[i][k+1],'rD')
 				for j in range(len(g[i])):
 					#print "x=",g[i][j][k],"y=",g[i][j][k+1]
-					x.append(g[i][j][k])
-					y.append(g[i][j][k+1])
-				#plotting line
-				pl.plot(x,y,'g')
+					x.insert(1,g[i][j][k])#x.append(g[i][j][k])
+					y.insert(1,g[i][j][k+1])#y.append(g[i][j][k+1])
+					#plotting line
+					pl.plot(x,y,'g')
+					x.remove(x[1])
+					y.remove(y[1])
 				x=[]
 				y=[]
 		pl.show()				
@@ -204,12 +207,12 @@ def final_cp(new_cp,g,count_re):
 			x=[]
 			y=[]
 			for i in range(len(new_cp)):
-				#print "x=",new_cp[i][k],"y=",new_cp[i][k+1]
+				print "x=",new_cp[i][k],"y=",new_cp[i][k+1]
 				x.append(new_cp[i][k])
 				y.append(new_cp[i][k+1])
 				pl.plot(cp[i][k],cp[i][k+1],'ks')
 				for j in range(len(g[i])):
-					#print "x=",g[i][j][k],"y=",g[i][j][k+1]
+					print "x=",g[i][j][k],"y=",g[i][j][k+1]
 					x.append(g[i][j][k])
 					y.append(g[i][j][k+1])
 				#plotting line
@@ -245,15 +248,3 @@ def main():
 	#print new_cp
 	
 main()
-
-
-
-
-
-
-
-
-		
-		
-
-
